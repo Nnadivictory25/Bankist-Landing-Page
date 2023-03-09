@@ -41,10 +41,6 @@ btnScrollTo.addEventListener('click', () => {
   console.log('Current scroll position: ', window.pageXOffset, window.pageYOffset)
   
   // scrolling
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset
-  // );
 
   // window.scrollTo({
   //   left: s1coords.left + window.pageXOffset,
