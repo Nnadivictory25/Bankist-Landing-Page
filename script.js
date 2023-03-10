@@ -51,9 +51,24 @@ btnScrollTo.addEventListener('click', () => {
 })
 
 // PAGE NAVIGATION
-document.querySelectorAll('.nav__link').forEach(link => { 
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('Link clicked')
-  })
+// document.querySelectorAll('.nav__link').forEach(link => { 
+//   link.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     const id = link.getAttribute('href')
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   })
+// })
+
+// WITH EVENT DELEGATION
+// . Add  event listener to common parent element
+// . Determine what eleemnt originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) { 
+    const id = e.target.getAttribute('href')
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 })
